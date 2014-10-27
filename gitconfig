@@ -8,6 +8,7 @@
   aa = add --all
   ap = add --patch
   ca = commit --amend
+  cm = commit
   ci = commit -a
   co = checkout
   co-pr = !sh -c 'git fetch origin pull/$1/head:pr/$1 && git checkout pr/$1' -
