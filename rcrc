@@ -1,2 +1,2 @@
 EXCLUDES="README.md LICENSE"
-DOTFILES_DIRS="$HOME/dotfiles-local $HOME/dotfiles"
+DOTFILES_DIRS="$BOXEN_SRC_DIR/dotfiles $BOXEN_SRC_DIR/platanus/dotfiles"
