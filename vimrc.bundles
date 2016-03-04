@@ -2,26 +2,26 @@ if &compatible
   set nocompatible
 end
 
-filetype off
-set rtp+=~/.vim/bundle/Vundle.vim/
-call vundle#begin()
+if empty(glob('~/.vim/autoload/plug.vim'))
+  silent !curl -fLo ~/.vim/autoload/plug.vim --create-dirs
+    \ https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+  autocmd VimEnter * PlugInstall | source $MYVIMRC
+endif
 
-" Let Vundle manage Vundle
-Plugin 'gmarik/Vundle.vim'
+call plug#begin('~/.vim/plugged')
 
 " Define bundles via Github repos
-Plugin 'altercation/vim-colors-solarized'
-Plugin 'kchmck/vim-coffee-script'
-Plugin 'scrooloose/syntastic'
-Plugin 'nathanaelkane/vim-indent-guides'
-Plugin 'pangloss/vim-javascript'
-Plugin 'tpope/vim-markdown'
-Plugin 'tpope/vim-git'
-Plugin 'airblade/vim-gitgutter'
+Plug 'altercation/vim-colors-solarized'
+Plug 'kchmck/vim-coffee-script'
+Plug 'scrooloose/syntastic'
+Plug 'nathanaelkane/vim-indent-guides'
+Plug 'pangloss/vim-javascript'
+Plug 'tpope/vim-markdown'
+Plug 'tpope/vim-git'
+Plug 'airblade/vim-gitgutter'
 
 if filereadable(expand("~/.vimrc.bundles.local"))
   source ~/.vimrc.bundles.local
 endif
 
-call vundle#end()
-filetype on
+call plug#end()
